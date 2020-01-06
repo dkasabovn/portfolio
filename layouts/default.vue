@@ -1,26 +1,36 @@
 <template>
-  <div>
+  <div class="mt-5">
     <div class="cursor-hover" ref="cursor" id="c"></div>
     <div id="c-outside" ref="cursorOut"></div>
-    <div class="sidebar d-none d-lg-block">
-      <div id="nav-main">Daniel <br>Kasabov<span style="color: #db3056">-</span>Nouvion</div>
-      <div>
-        <ul class="no-list nav-list-main">
-          <li class="ghost-arrow">Projects</li>
-          <li class="ghost-arrow">Photos</li>
-          <li class="ghost-arrow">Resume (JSON)</li>
-        </ul>
+      <div class="d-none d-lg-block sidebar">
+        <div id="nav-main">Daniel <br>Kasabov<span style="color: #db3056">-</span>Nouvion</div>
+        <div>
+          <ul class="no-list nav-list-main">
+            <li class="ghost-arrow">
+              <nuxt-link :to="'/list'" tag="span">Projects</nuxt-link>
+            </li>
+            <li class="ghost-arrow">
+              <nuxt-link :to="'#'" tag="span">Photos</nuxt-link>
+            </li>
+            <li class="ghost-arrow">
+              <nuxt-link :to="'#'" tag="span">Resume (JSON)</nuxt-link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul class="no-list nav-list-secondary">
+            <li class="red-link">
+              <nuxt-link :to="'about'" tag="span">About</nuxt-link>
+            </li>
+            <li class="red-link">
+              <nuxt-link :to="'contact'" tag="span">Contact</nuxt-link>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <ul class="no-list nav-list-secondary">
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
+      <div class="container-fluid col-lg-9">
+        <nuxt />
       </div>
-    </div>
-    <div class="content-main">
-      <nuxt />
-    </div>
   </div>
 </template>
 
@@ -73,9 +83,12 @@ export default {
 </script>
 
 <style>
+* {
+  padding: 0;
+}
 #nav-main {
   font-family: 'Playfair Display', serif;
-  font-size: 25px;
+  font-size: 35px;
   margin-bottom: 20px;
 }
 .no-list {
@@ -84,24 +97,27 @@ export default {
 }
 .nav-list-main {
   font-family: 'Work Sans', sans-serif;
-  font-size: 17px;
+  font-size: 20px;
 }
 .nav-list-secondary {
   font-family: 'Work Sans', sans-serif;
   font-weight: 300;
-  font-size: 15px;
+  font-size: 17px;
+}
+.red-link {
+  text-decoration: underline;
   color: #db3056;
+  cursor: pointer;
 }
 .sidebar {
-  height: auto;
-  width: 200px;
-  position: fixed;
+  padding-left: 3vw;
+  padding-right: 0;
+  position: sticky;
   top: 50px;
-  left: 50px;
+  position: fixed;
 }
-.content-main {
-  margin-left: 250px;
-  margin-top: 50px;
+.ghost-arrow {
+  cursor: pointer;
 }
 .ghost-arrow::after {
   content: '\0027f9';

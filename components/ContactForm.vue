@@ -29,32 +29,21 @@ export default {
 </script>
 
 <style scoped>
-.contact-form {
-  font-family: 16px;
-  padding: 40px;
-  width: 30%;
-  background-color: white;
-  border-left: 6px solid black;
-  position: relative;
-  z-index: 2;
-}
-
 .contact-form .form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-size: 20px;
 }
 
 .contact-form input[type="email"],
 .contact-form input[type="text"],
 .contact-form textarea {
     border: none;
-    border-bottom: solid 1px red;
-    font-family: "Roboto", sans-serif;
-    padding: 10px 7px;
-    margin-bottom: 15px;
+    border-bottom: solid 1px black;
+    font-family: "Work Sans", sans-serif;
+    padding: 10px 3px;
     outline: none;
+    margin-bottom: 50px;
 }
 
 .contact-form textarea {
@@ -62,19 +51,12 @@ export default {
 }
 
 .contact-form .button {
-  background: #000;
+  background: #db3056;
   color: white;
   cursor: pointer;
   border: none;
-  padding: 10px 40px;
+  width: 50%;
   text-align: center;
-  text-transform: uppercase;
-}
-
-.contact-form input[type="email"],
-.contact-form input[type="text"],
-.contact-form textarea {
-  font-size: 20px;
-  font-family: "Work Sans", sans-serif;
+  font-family: 'Work Sans', sans-serif;
 }
 </style>

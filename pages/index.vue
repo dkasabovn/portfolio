@@ -17,7 +17,7 @@ export default {
       ]
     }
   },
-  asyncData(context) {
+  async asyncData(context) {
     let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
 
         // Load the JSON from the API

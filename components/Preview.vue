@@ -5,7 +5,7 @@
              {{blok.created_at}}
          </p>
          <p id="preview-title">
-             {{blok.content.Title}}
+             <nuxt-link :to="blok.name" tag="span">{{blok.content.Title}} <span style="color:#db3056;">&#8594;</span></nuxt-link>
          </p>
     </div>    
 </template>

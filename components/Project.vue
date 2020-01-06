@@ -1,5 +1,5 @@
 <template>
-  <div class="project" v-editable="blok">
+  <div class="d-flex flex-column align-items-center" v-editable="blok">
     <client-only>
       <p id="title">{{blok.Title}}</p>
       <img id="hook-image" :src="$storyblokImage(blok.Preview, '')" :alt="blok.title"/>
@@ -16,23 +16,13 @@ export default {
 </script>
 
 <style scoped>
-.project {
-  padding-top: 20vh;
-  width: inherit;
-  align-content: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
 #title {
   font-family: 'Playfair Display', serif;
   font-size: 4em;
   text-align: center;
   padding-bottom: 3vh;
+  max-width: 15em;
 }
-
 #hook-image {
   margin-bottom: 5vh;
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="body-paragraph" v-editable="blok">
+    <div class="body-paragraph col-sm-12 col-lg-8" v-editable="blok">
         <div v-html="richtext" class="md"></div>
     </div>
 </template>
@@ -16,9 +16,6 @@ export default {
 </script>
 
 <style scoped>
-.body-paragraph {
-    width: 40%;
-}
 .md {
     font-size: 1.1em;
     font-weight: 300;
@@ -35,5 +32,11 @@ export default {
 .md >>> p {
     margin-bottom: 3vh;
     text-align: justify;
+}
+.md >>> .r-u {
+    text-decoration: #db3056 underline;
+}
+.md >>> .red {
+    color: #db3056;
 }
 </style>

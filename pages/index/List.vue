@@ -1,17 +1,10 @@
 <template>
-<div class="container-fluid">
-    <div class="row">
-        <div class="row col-lg-9 offset-lg-1">
+<div class="container">
+        <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-4 mb-5" v-for="story in filteredStories" :key="story.uuid">
                 <Preview :blok="story"/>
             </div>
         </div>
-        <div class="col">
-            <p>Categories</p>
-            <p>Topics</p>
-            <p>Search</p>
-        </div>
-    </div>
 </div>
 </template>
 
@@ -19,22 +12,22 @@
 export default {
     data() {
         return {
-            category: 'a',
-            categories: {
-                'Projects' : 'p',
-                'Articles' : 'r',
-                'Opinions' : 'o',
-                'All Posts' : 'a'
-            },
-            topic: 'a',
-            topics: {
-                'Robotics' : 'r',
-                'Frontend' : 'f',
-                'Data Science' : 'd',
-                'Software' : 's',
-                'Educations' : 'e',
-                'Anything' : 'a'
-            } 
+            "categories": [
+                { text: "Everything", value: 'a' },
+                { text: "Projects", value: 'p' },
+                { text: "Guides", value: 'g' },
+                { text: "Experiences", value: 'e' }
+            ],
+            "category": 'a',
+            "topics": [
+                { text: "Everything", value: 'a' },
+                { text: "Robotics", value: 'r' },
+                { text: "Frontend", value: 'f' },
+                { text: "A.I. & M.L.", value: 'x' },
+                { text: "Cloud", value: 'c' },
+                { text: "Misc.", value: 'm' }
+            ],
+            "topic": 'a'
         }
     },
     props: {
@@ -46,7 +39,7 @@ export default {
     computed: {
         filteredStories : function() {
             let stories2 = []
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < 20; i++) {
                 stories2.push(this.stories[0])
             }
             return stories2
@@ -55,10 +48,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 /* list styling */
 ul {
     list-style: none;
 }
-/* Overall Layout */
 </style>

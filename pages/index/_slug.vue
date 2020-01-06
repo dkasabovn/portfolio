@@ -1,11 +1,8 @@
 <template>
-    <div>
-        <section class="restrict-width">
+    <div class="container">
+        <section>
             <component v-if="story.content" :key="story.content._uid" :blok="story.content" :is="story.content.component"></component>
         </section>
-        <div id="social-media-links">
-            
-        </div>
     </div>
 </template>
 
@@ -42,9 +39,4 @@ export default {
 </script>
 
 <style scoped>
-.restrict-width {
-    display: flex;
-    width: inherit;
-    justify-content: center;
-}
 </style>
