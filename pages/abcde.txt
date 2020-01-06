@@ -1,0 +1,143 @@
+<template>
+<div class="list">
+    <div class="header">
+    <p class="intro">
+        Hey, I'm Daniel. Down below you will see some of my featured projects. Feel free to browse through and learn about some of the things I do in my free time. If you are interested my about page has contact information and etc.
+    </p>
+    <div id="sort">Here are some of my <DropDown :options="categories" v-model="category"></DropDown> projects, that are written in <DropDown :options="languages" v-model="language"></DropDown></div>
+    </div>
+    <ul>
+        <li class="project" v-for="i in posts" :key="i.attributes.title">
+            <div class="v-group">
+                <div style="overflow: hidden; height: 200px; margin: 0 0 2vh 0;"><img src="~/assets/download.jpg" alt="" width="auto" height="auto"></div>
+                <div class="labels">
+                    <ul>
+                        <li v-for="tag in i.attributes.tags" :key="tag">{{tag}}</li>
+                    </ul>
+                </div>
+                <div class="name"><span style="display: inline-block;" class="special wrap-cursor"><nuxt-link :to="`${i.attributes.link}`" tag="a">{{i.attributes.title}}</nuxt-link></span></div>
+                <div class="description">{{i.attributes.description}}</div>
+            </div>
+        </li>
+    </ul>
+</div>
+</template>
+
+<script>
+import DropDown from '@/components/DropDown.vue'
+
+export default {
+    async asyncData() {
+        const res = require.context("~/content/", true, /\.md$/)
+        const imports = res.keys().map((key) => {
+            const [, name] = key.match(/\/(.+)\.md$/)
+            return res(key)
+        })
+        return {
+            posts: imports
+        }
+    },
+    data() {
+        return {
+            category: 'a',
+            categories : {
+                'Robotics': 'r',
+                'Data Science': 'd',
+                'Web' : 'w',
+                'Non-Code' : 'n',
+                'General' : 'a'
+            },
+            language: 'a',
+            languages : {
+                'C++': 'cpp',
+                'Javascript': 'js',
+                'Java': 'java',
+                'Kotlin': 'kt',
+                'Python': 'py',
+                'English': 'e',
+                'Any Language': 'a'
+            }
+        }
+    },
+    components: {
+        DropDown
+    },
+    computed: {
+
+    }
+}
+</script>
+
+<style scoped>
+/* list styling */
+ul {
+    list-style: none;
+}
+.project {
+    font-size: .5em;
+    display: flex;
+    flex: 0;
+    color: black;
+    height: min-content;
+    padding-bottom: 2vh;
+    margin-bottom: 3vh;
+    border-bottom: 1px solid rgba(0,0,0,.2);
+}
+.v-group {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.name {
+    text-decoration: underline;
+    font-size: 6em;
+    text-align: left;
+    position: relative;
+}
+.labels ul {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    text-align: right;
+}
+.labels ul li {
+    margin-right: 1vw;
+    font-family: 'Fira Code', sans-serif;
+    font-size: 2em;
+    color: #000000D9;
+}
+.description {
+    font-family: 'EB Garamond', serif;
+    font-size: 3em;
+    margin-top: 1vh;
+    text-align: left;
+    max-width: 50vw;
+}
+/* Overall Layout */
+.list {
+    width: 50vw;
+}
+/* header styling */
+.header {
+    font-family: 'Cormorant Garamond',courier,serif;
+    text-align: left;
+    font-size: 1.3em;
+    color: black;
+    margin-bottom: 3vh;
+}
+.intro {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    margin: 0 0 20px 0;
+    padding: 0 0 20px 0;
+    font-family: 'EB Garamond', serif;
+}
+#name {
+    font-size: 2em;
+    margin-bottom: 1vh;
+}
+#sort {
+    font-size: 1.3em;
+    margin: 2vh 0vh 2vh 0;
+}
+</style>
