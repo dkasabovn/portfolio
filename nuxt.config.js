@@ -34,7 +34,8 @@ export default {
   */
   plugins: [
     '~/plugins/components.js',
-    '~/plugins/functions.js'
+    '~/plugins/functions.js',
+    '~/plugins/prism.js'
   ],
   /*
   ** Nuxt.js dev-modules

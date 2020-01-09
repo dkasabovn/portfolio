@@ -5,32 +5,36 @@
 </template>
 
 <script>
+
 export default {
     props: ['blok'],
     computed : {
         richtext() {
             return this.blok.Main ? this.$storyapi.richTextResolver.render(this.blok.Main) : ''
         }
+    },
+    mounted() {
+        Prism.highlightAll()
     }
 }
 </script>
 
 <style scoped>
 .md {
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 300;
     font-family: 'Work Sans', sans-serif;
     color: black;
 }
 .md >>> * {
-    line-height: 2em;
+    line-height: 2.3em;
 }
 .md >>> h1, .md >>> h3 {
     line-height: 2em;
     vertical-align: text-top;
 }
 .md >>> p {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     text-align: justify;
 }
 .md >>> .r-u {

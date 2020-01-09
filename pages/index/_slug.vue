@@ -7,33 +7,25 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
     data() {
         return {
             story : null
         }
     },
-    async fetch({params, error, store}) {
-        let storycontent = store.getStory(params.slug)
-        if (storycontent) {
-            return {
-                story: storycontent
-            }
-        } else {
-            error({statusCode: 404, message: "pogchamp"})
-        }
-    },
     mounted () {
-        this.$storybridge.on(['input', 'published', 'change'], (event) => {
-            if (event.action == 'input') {
-            if (event.story.id === this.story.id) {
-                this.story.content = event.story.content
-            }
-            } else {
-                window.location.reload()
-            }
-        })
-    }
+        
+        let storycontent = this.getStory(this.$route.params.slug)
+        if (storycontent != null) {
+            this.story = storycontent
+        } else {
+            this.$nuxt.error({statusCode: 404, message: "Page could not be found"})
+        }
+        this.$store.dispatch('refresh')
+    },
+    computed: mapGetters(['getStory'])
 }
 </script>
 

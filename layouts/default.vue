@@ -10,10 +10,10 @@
               <nuxt-link :to="'/list'" tag="span">Projects</nuxt-link>
             </li>
             <li class="ghost-arrow">
-              <nuxt-link :to="'#'" tag="span">Services</nuxt-link>
+              <nuxt-link :to="'/products'" tag="span">Services</nuxt-link>
             </li>
             <li class="ghost-arrow">
-              <nuxt-link :to="'#'" tag="span">Resume (JSON)</nuxt-link>
+              <nuxt-link :to="'/resume'" tag="span">Resume (JSON)</nuxt-link>
             </li>
           </ul>
         </div>

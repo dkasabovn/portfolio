@@ -8,35 +8,19 @@
 
 export default {
   middleware: 'redirect',
-  data() {
-    return {
-      stories: [
-
-      ]
-    }
-  },
-  async fetch(context) {
-    let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
-
-        // Load the JSON from the API
-        return context.app.$storyapi.get(`cdn/stories/`, {
-          version: version
-        }).then((res) => {
-          context.store.commit('push', res.data.stories)
-        }).catch((res) => {
-          context.error({ statusCode: res.response.status, message: res.response.data })
-        })
-  },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
-        if (event.action == 'input') {
+      if (event.action == 'input') {
         if (event.story.id === this.story.id) {
-            this.story.content = event.story.content
+          this.story.content = event.story.content
         }
-        } else {
-            window.location.reload()
-        }
-      })
+      } else {
+        window.location.reload()
+      }
+    })
+  },
+  fetch ({store}) {
+    store.dispatch('refresh')
   }
 }
 </script>
