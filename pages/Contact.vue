@@ -10,10 +10,18 @@
 </template>
 
 <script>
+
 export default {
     components : {
         Contact : () => import('@/components/ContactForm.vue')
     }
+    // async fetch({store}) {
+    //     store.commit('push', [{"name" : "pogv"}, {"name" : "pogu"}])
+    // },
+    // computed: mapGetters([
+    //     'get',
+    //     'getStory'
+    // ])
 }
 </script>
 

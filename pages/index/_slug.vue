@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <section>
-            <component v-if="story.content" :key="story.content._uid" :blok="story.content" :is="story.content.component"></component>
+            <component v-if="story" :key="story.content._uid" :blok="story.content" :is="story.content.component"></component>
         </section>
     </div>
 </template>
@@ -13,12 +13,14 @@ export default {
             story : null
         }
     },
-    props : {
-        stories: Array,
-    },
-    asyncData({params}) {
-        return {
-            name : params.slug
+    async fetch({params, error, store}) {
+        let storycontent = store.getStory(params.slug)
+        if (storycontent) {
+            return {
+                story: storycontent
+            }
+        } else {
+            error({statusCode: 404, message: "pogchamp"})
         }
     },
     mounted () {
@@ -31,9 +33,6 @@ export default {
                 window.location.reload()
             }
         })
-    },
-    created () {
-        this.story = this.stories.find(s => s.name == this.name)
     }
 }
 </script>

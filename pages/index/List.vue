@@ -1,14 +1,16 @@
 <template>
 <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-5" v-for="story in filteredStories" :key="story.uuid">
-                <Preview :blok="story"/>
-            </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 mb-5" v-for="story in get" :key="story.uuid">
+            <Preview :blok="story"/>
         </div>
+    </div>
 </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
     data() {
         return {
@@ -30,21 +32,13 @@ export default {
             "topic": 'a'
         }
     },
-    props: {
-        stories: Array
-    },
     components : {
         Preview : () => import('@/components/Preview.vue')
     },
-    computed: {
-        filteredStories : function() {
-            let stories2 = []
-            for (let i = 0; i < 20; i++) {
-                stories2.push(this.stories[0])
-            }
-            return stories2
-        }
-    }
+    computed: mapGetters([
+        'get',
+        'getStory'
+    ])
 }
 </script>
 

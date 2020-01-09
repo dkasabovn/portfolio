@@ -10,7 +10,7 @@
               <nuxt-link :to="'/list'" tag="span">Projects</nuxt-link>
             </li>
             <li class="ghost-arrow">
-              <nuxt-link :to="'#'" tag="span">Photos</nuxt-link>
+              <nuxt-link :to="'#'" tag="span">Services</nuxt-link>
             </li>
             <li class="ghost-arrow">
               <nuxt-link :to="'#'" tag="span">Resume (JSON)</nuxt-link>

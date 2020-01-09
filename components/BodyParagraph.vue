@@ -30,7 +30,7 @@ export default {
     vertical-align: text-top;
 }
 .md >>> p {
-    margin-bottom: 3vh;
+    margin-bottom: 50px;
     text-align: justify;
 }
 .md >>> .r-u {
@@ -38,5 +38,11 @@ export default {
 }
 .md >>> .red {
     color: #db3056;
+}
+.md >>> blockquote {
+    font-family: 'Work Sans', serif;
+    font-size: 2em;
+    color: rgba(0, 0, 0, .8);
+    font-style: italic;
 }
 </style>

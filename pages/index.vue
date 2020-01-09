@@ -1,12 +1,10 @@
 <template>
 <div>
-    <nuxt-child :stories="stories"/>
+    <nuxt-child/>
 </div>
 </template>
 
 <script>
-import GithubLink from '@/components/GithubLink.vue'
-import LeagueLink from '@/components/LeagueLink.vue'
 
 export default {
   middleware: 'redirect',
@@ -17,21 +15,17 @@ export default {
       ]
     }
   },
-  async asyncData(context) {
+  async fetch(context) {
     let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
 
         // Load the JSON from the API
         return context.app.$storyapi.get(`cdn/stories/`, {
-            version: version
+          version: version
         }).then((res) => {
-            return res.data
+          context.store.commit('push', res.data.stories)
         }).catch((res) => {
-            context.error({ statusCode: res.response.status, message: res.response.data })
+          context.error({ statusCode: res.response.status, message: res.response.data })
         })
-  },
-  components : {
-    GithubLink,
-    LeagueLink
   },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
@@ -43,11 +37,6 @@ export default {
             window.location.reload()
         }
       })
-  },
-  methods : {
-    selectStory : function(index) {
-      this.index = index
-    }
   }
 }
 </script>
