@@ -23,6 +23,8 @@ export const actions = {
             version: 'draft'
           }).then((res) => {
             commit('push', res.data.stories)
+          }).catch((rej) => {
+            commit('push', [])
           })
     },
     refresh ({commit}) {
@@ -30,6 +32,8 @@ export const actions = {
             version: 'draft'
           }).then((res) => {
             commit('push', res.data.stories)
+          }).catch((rej) => {
+              commit('push', [])
           })
     }
 }

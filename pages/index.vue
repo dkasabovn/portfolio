@@ -10,17 +10,9 @@ export default {
   middleware: 'redirect',
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
-      if (event.action == 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else {
-        window.location.reload()
-      }
+      window.location.reload()
+      this.$store.dispatch('refresh')
     })
-  },
-  fetch ({store}) {
-    store.dispatch('refresh')
   }
 }
 </script>

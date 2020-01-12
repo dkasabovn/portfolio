@@ -27,7 +27,7 @@ export default {
     color: black;
 }
 .md >>> * {
-    line-height: 2.3em;
+    line-height: 2em;
 }
 .md >>> h1, .md >>> h3 {
     line-height: 2em;

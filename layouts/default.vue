@@ -2,35 +2,44 @@
   <div class="mt-5">
     <div class="cursor-hover" ref="cursor" id="c"></div>
     <div id="c-outside" ref="cursorOut"></div>
-      <div class="d-none d-lg-block sidebar">
-        <div id="nav-main">Daniel <br>Kasabov<span style="color: #db3056">-</span>Nouvion</div>
-        <div>
-          <ul class="no-list nav-list-main">
-            <li class="ghost-arrow">
-              <nuxt-link :to="'/list'" tag="span">Projects</nuxt-link>
-            </li>
-            <li class="ghost-arrow">
-              <nuxt-link :to="'/products'" tag="span">Services</nuxt-link>
-            </li>
-            <li class="ghost-arrow">
-              <nuxt-link :to="'/resume'" tag="span">Resume (JSON)</nuxt-link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <ul class="no-list nav-list-secondary">
-            <li class="red-link">
-              <nuxt-link :to="'about'" tag="span">About</nuxt-link>
-            </li>
-            <li class="red-link">
-              <nuxt-link :to="'contact'" tag="span">Contact</nuxt-link>
-            </li>
-          </ul>
+    <div class="d-lg-none">
+      <div class="container-fluid">
+        <div class="rows">
+          <div class="col-sm-12">
+            
+          </div>
         </div>
       </div>
-      <div class="container-fluid col-lg-9">
-        <nuxt />
+    </div>
+    <div class="d-none d-lg-block sidebar">
+      <div id="nav-main">Daniel <br>Kasabov<span style="color: #db3056">-</span>Nouvion</div>
+      <div>
+        <ul class="no-list nav-list-main">
+          <li class="ghost-arrow">
+            <nuxt-link :to="'/list'" tag="span">Projects</nuxt-link>
+          </li>
+          <li class="ghost-arrow">
+            <nuxt-link :to="'/products'" tag="span">Services</nuxt-link>
+          </li>
+          <li class="ghost-arrow">
+            <nuxt-link :to="'/resume'" tag="span">Resume (JSON)</nuxt-link>
+          </li>
+        </ul>
       </div>
+      <div>
+        <ul class="no-list nav-list-secondary">
+          <li class="red-link">
+            <nuxt-link :to="'about'" tag="span">About</nuxt-link>
+          </li>
+          <li class="red-link">
+            <nuxt-link :to="'contact'" tag="span">Contact</nuxt-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container-fluid col-lg-9">
+      <nuxt />
+    </div>
   </div>
 </template>
 
