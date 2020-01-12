@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 pog">
                 <pre><code class="language-javascript">{{Resume}}</code></pre>
             </div>
         </div>
@@ -52,5 +52,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

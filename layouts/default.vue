@@ -1,15 +1,23 @@
 <template>
-  <div class="mt-5">
-    <div class="cursor-hover" ref="cursor" id="c"></div>
-    <div id="c-outside" ref="cursorOut"></div>
+  <div class="mt-lg-5 mt-2">
+    <div class="cursor-hover d-none  d-lg-block d-xl-block" ref="cursor" id="c"></div>
+    <div id="c-outside" class="d-none d-lg-block d-xl-block" ref="cursorOut"></div>
     <div class="d-lg-none">
-      <div class="container-fluid">
-        <div class="rows">
-          <div class="col-sm-12">
-            
-          </div>
-        </div>
-      </div>
+      <b-navbar toggleable="sm" class="mb-3">
+        <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
+
+        <b-navbar-brand>Daniel K</b-navbar-brand>
+
+        <b-collapse id="nav-text-collapse" is-nav>
+          <b-navbar-nav>
+            <nuxt-link :to="'/list'">Projects</nuxt-link>
+            <nuxt-link :to="'products'">Services</nuxt-link>
+            <!-- <nuxt-link :to="'resume'">Resume (JSON)</nuxt-link> -->
+            <nuxt-link :to="'about'">About</nuxt-link>
+            <nuxt-link :to="'contact'">Contact</nuxt-link>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
     </div>
     <div class="d-none d-lg-block sidebar">
       <div id="nav-main">Daniel <br>Kasabov<span style="color: #db3056">-</span>Nouvion</div>

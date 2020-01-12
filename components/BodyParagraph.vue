@@ -1,6 +1,6 @@
 <template>
     <div class="body-paragraph col-sm-12 col-lg-8" v-editable="blok">
-        <div v-html="richtext" class="md"></div>
+        <div v-html="richtext" class="md text-"></div>
     </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
 
 <style scoped>
 .md {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 300;
     font-family: 'Work Sans', sans-serif;
     color: black;
@@ -35,7 +35,7 @@ export default {
 }
 .md >>> p {
     margin-bottom: 40px;
-    text-align: justify;
+    text-align: left;
 }
 .md >>> .r-u {
     text-decoration: #db3056 underline;
@@ -48,5 +48,11 @@ export default {
     font-size: 2em;
     color: rgba(0, 0, 0, .8);
     font-style: italic;
+}
+
+@media (min-width: 992px) {
+    .md {
+        font-size: 1.1em;
+    }
 }
 </style>

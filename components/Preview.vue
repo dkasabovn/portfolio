@@ -14,7 +14,7 @@
 export default {
     data() {
         return {
-            dimensions: '/1000x500'
+            dimensions: '/1000x500',
         }
     },
     props:['blok', 'params'],
