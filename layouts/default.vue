@@ -12,7 +12,6 @@
           <b-navbar-nav>
             <nuxt-link :to="'/list'">Projects</nuxt-link>
             <nuxt-link :to="'products'">Services</nuxt-link>
-            <!-- <nuxt-link :to="'resume'">Resume (JSON)</nuxt-link> -->
             <nuxt-link :to="'about'">About</nuxt-link>
             <nuxt-link :to="'contact'">Contact</nuxt-link>
           </b-navbar-nav>
@@ -55,7 +54,13 @@
 import { TweenLite } from 'gsap'
 
 export default {
+  head() {
+    return {
+      title: "dkasabovn"
+    }
+  },
   mounted() {
+    this.$store.dispatch('refresh')
     if (!this.isMobile()) {
       this.start()
     }

@@ -1,4 +1,4 @@
-const sblock = require('./assets/config.json')
+require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -54,7 +54,7 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     ['storyblok-nuxt', {
-      accessToken: sblock.key,
+      accessToken: process.env.APKEY,
       cacheProvider: 'memory'
     }]
   ],
