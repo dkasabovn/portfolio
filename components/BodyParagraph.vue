@@ -1,5 +1,5 @@
 <template>
-    <div class="body-paragraph col-sm-12 col-lg-8" v-editable="blok">
+    <div class="body-paragraph col-sm-12 col-lg-9" v-editable="blok">
         <div v-html="richtext" class="md text-"></div>
     </div>
 </template>
@@ -21,12 +21,11 @@ export default {
 
 <style scoped>
 .md {
-    font-size: 1em;
-    font-weight: 300;
+    font-size: .7em;
+    font-weight: 400;
     font-family: 'Work Sans', sans-serif;
-    color: black;
 }
-.md >>> * {
+.md >>> p, .md >>> h1, .md >>> h3 {
     line-height: 2em;
 }
 .md >>> h1, .md >>> h3 {
@@ -34,7 +33,8 @@ export default {
     vertical-align: text-top;
 }
 .md >>> p {
-    margin-bottom: 40px;
+    color: rgba(70, 70, 70, 1.0);
+    margin: 16px 0;
     text-align: left;
 }
 .md >>> .r-u {

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 pog">
+            <div class="col-lg-6 offset-lg-3 col-sm-12 pog">
                 <pre><code class="language-javascript">{{Resume}}</code></pre>
             </div>
         </div>

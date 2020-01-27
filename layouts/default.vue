@@ -1,7 +1,5 @@
 <template>
   <div class="mt-lg-5 mt-2">
-    <div class="cursor-hover d-none  d-lg-block d-xl-block" ref="cursor" id="c"></div>
-    <div id="c-outside" class="d-none d-lg-block d-xl-block" ref="cursorOut"></div>
     <div class="d-lg-none">
       <b-navbar toggleable="sm" class="mb-3">
         <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
@@ -10,10 +8,11 @@
 
         <b-collapse id="nav-text-collapse" is-nav>
           <b-navbar-nav>
-            <nuxt-link :to="'/list'">Projects</nuxt-link>
-            <nuxt-link :to="'products'">Services</nuxt-link>
-            <nuxt-link :to="'about'">About</nuxt-link>
-            <nuxt-link :to="'contact'">Contact</nuxt-link>
+            <nuxt-link class="sm-link" :to="'/'">Projects</nuxt-link>
+            <nuxt-link class="sm-link" :to="'/products'">Services</nuxt-link>
+            <nuxt-link class="sm-link" :to="'/about'">About</nuxt-link>
+            <nuxt-link class="sm-link" :to="'/contact'">Contact</nuxt-link>
+            <nuxt-link class="sm-link" :to="'/resume'">Resume (JSON)</nuxt-link>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -23,7 +22,7 @@
       <div>
         <ul class="no-list nav-list-main">
           <li class="ghost-arrow">
-            <nuxt-link :to="'/list'" tag="span">Projects</nuxt-link>
+            <nuxt-link :to="'/'" tag="span">Projects</nuxt-link>
           </li>
           <li class="ghost-arrow">
             <nuxt-link :to="'/products'" tag="span">Services</nuxt-link>
@@ -36,10 +35,10 @@
       <div>
         <ul class="no-list nav-list-secondary">
           <li class="red-link">
-            <nuxt-link :to="'about'" tag="span">About</nuxt-link>
+            <nuxt-link :to="'/about'" tag="span">About</nuxt-link>
           </li>
           <li class="red-link">
-            <nuxt-link :to="'contact'" tag="span">Contact</nuxt-link>
+            <nuxt-link :to="'/contact'" tag="span">Contact</nuxt-link>
           </li>
         </ul>
       </div>
@@ -61,45 +60,6 @@ export default {
   },
   mounted() {
     this.$store.dispatch('refresh')
-    if (!this.isMobile()) {
-      this.start()
-    }
-  },
-  methods: {
-    moveCircle: function(e) {
-      TweenLite.to(this.$refs.cursor, 0.2, {
-        css: {
-          left: e.pageX,
-          top: e.pageY
-        }
-      })
-    },
-    moveBorder: function(e) {
-      TweenLite.to(this.$refs.cursorOut, 0.7, {
-        css: {
-          left: e.pageX,
-          top: e.pageY
-        }
-      })
-    },
-    start: function() {
-      let _this = this
-      this.round()
-      document.addEventListener('mousemove', this.moveCircle)
-      document.addEventListener('mousemove', this.moveBorder)
-    },
-    round: function() {
-      TweenLite.to(this.$refs.cursor, 0.4, {
-        css: {
-          'border-radius': '200%'
-        }
-      })
-    },
-    isMobile: function() {
-      if (process.client) {
-        return window.innerWidth < 1224
-      }
-    }
   }
 }
 </script>
@@ -156,27 +116,9 @@ export default {
 .ghost-arrow:hover {
   text-decoration: underline;
 }
-#c {
-  width: .3vw;
-  height: .3vw;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  border-collapse: separate;
-  mix-blend-mode: difference;
-  z-index: 20;
-  background-color: white;
-}
-#c-outside {
-  width: 1.6vw;
-  height: 1.6vw;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  border-collapse: separate;
-  mix-blend-mode: difference;
-  z-index: 20;
-  border: 1px solid #ff6961;
-  border-radius: 100%;
+.sm-link {
+  padding: 3px 10px;
+  color: rgb(91, 91, 91);
+  text-decoration: underline;
 }
 </style>
