@@ -12,7 +12,7 @@
             <nuxt-link class="sm-link" :to="'/products'">Services</nuxt-link>
             <nuxt-link class="sm-link" :to="'/about'">About</nuxt-link>
             <nuxt-link class="sm-link" :to="'/contact'">Contact</nuxt-link>
-            <nuxt-link class="sm-link" :to="'/resume'">Resume (JSON)</nuxt-link>
+            <nuxt-link class="sm-link" :to="'/resume'">Resume</nuxt-link>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -28,7 +28,7 @@
             <nuxt-link :to="'/products'" tag="span">Services</nuxt-link>
           </li>
           <li class="ghost-arrow">
-            <nuxt-link :to="'/resume'" tag="span">Resume (JSON)</nuxt-link>
+            <nuxt-link :to="'/resume'" tag="span">Resume</nuxt-link>
           </li>
         </ul>
       </div>
@@ -50,8 +50,6 @@
 </template>
 
 <script>
-import { TweenLite } from 'gsap'
-
 export default {
   head() {
     return {

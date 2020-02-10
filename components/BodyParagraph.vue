@@ -52,7 +52,7 @@ export default {
 
 @media (min-width: 992px) {
     .md {
-        font-size: 1.1em;
+        font-size: 1.2em;
     }
 }
 </style>
