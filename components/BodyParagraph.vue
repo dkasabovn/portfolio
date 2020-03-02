@@ -25,12 +25,20 @@ export default {
     font-weight: 400;
     font-family: 'Work Sans', sans-serif;
 }
+.md >>> .imagec {
+    text-align: center;
+}
 .md >>> p, .md >>> h1, .md >>> h3 {
     line-height: 2em;
 }
 .md >>> h1, .md >>> h3 {
     line-height: 2em;
     vertical-align: text-top;
+}
+.md >>> p img {
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
 }
 .md >>> p {
     color: rgba(70, 70, 70, 1.0);

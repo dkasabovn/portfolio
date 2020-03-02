@@ -13,13 +13,13 @@
 export default {
   data() {
     return {
-      dimensions: '/1000x500'
+      dimensions: '/1000x1000'
     }
   },
   props: ['blok'],
   computed: {
     imageParams : function() {
-        return `/fit-in/${this.dimensions}/filters:fill(000000)`
+        return `/fit-in/${this.dimensions}`
     }
   },
   mounted() {

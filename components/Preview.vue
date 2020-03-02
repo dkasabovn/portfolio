@@ -20,7 +20,7 @@ export default {
     props:['blok', 'params'],
     computed: {
         imageParams : function() {
-            return `/fit-in/${this.dimensions}/filters:fill(000000)`
+            return `/fit-in/${this.dimensions}/filters:fill(transparent):format(png)`
         }
     },
     mounted() {
