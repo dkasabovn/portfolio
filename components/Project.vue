@@ -1,48 +1,28 @@
 <template>
   <div class="d-flex flex-column align-items-center" v-editable="blok" ref="project">
-    <client-only>
-      <p id="title">{{blok.Title}}</p>
-      <img id="hook-image" :src="$storyblokImage(blok.Preview, imageParams)" :alt="blok.title"/>
-      <component :key="blok._uid" v-for="blok in blok.Body" :blok="blok" :is="blok.component"></component>
-    </client-only>
-
+    <div class="col-sm-12 col-lg-10">
+      <client-only>
+        <h1 class="title">{{blok.Title}}</h1>
+        <component :key="blok._uid" v-for="blok in blok.Body" :blok="blok" :is="blok.component"></component>
+      </client-only>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      dimensions: '/1000x1000'
-    }
-  },
+
   props: ['blok'],
-  computed: {
-    imageParams : function() {
-        return `/fit-in/${this.dimensions}`
-    }
-  },
-  mounted() {
-    let width = this.$refs.project.clientWidth;
-    this.dimensions = `${width}x300`
-  }
+
 }
 </script>
 
 <style scoped>
-#title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5em;
-  text-align: center;
-  padding-bottom: 3vh;
+.title {
+  font-family: 'Lato', sans-serif;
+  font-size: 27px;
+  color: black;
+  text-align: left;
   max-width: 15em;
-}
-#hook-image {
-  margin-bottom: 5vh;
-}
-@media (min-width: 992px) {
-    #title {
-      font-size: 4em;
-    }
 }
 </style>

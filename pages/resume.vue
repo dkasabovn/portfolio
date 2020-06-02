@@ -4,7 +4,7 @@
             <div class="col-lg-4 col-sm-12">
                 <b-card class="h-100">
                     <h3>Robotics</h3>
-                    <p>Software lead on QuadX 6299. Check out my <a href="https://github.com/QuadX6299/2019-2020" target="_blank" class="red-link">2019-2020 Repository</a></p>
+                    <p>Software member of Valor 6800. Check out my repo from last year on QuadX <a href="https://github.com/QuadX6299/2019-2020" target="_blank" class="red-link">2019-2020 Repository</a></p>
                     <h6>Technologies</h6>
                     <ul>
                         <li>Java</li>

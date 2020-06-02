@@ -1,5 +1,5 @@
 <template>
-    <div class="body-paragraph col-sm-12 col-lg-9" v-editable="blok">
+    <div class="body-paragraph" v-editable="blok">
         <div v-html="richtext" class="md text-"></div>
     </div>
 </template>
@@ -21,19 +21,24 @@ export default {
 
 <style scoped>
 .md {
-    font-size: .7em;
+    font-size: 16px;
     font-weight: 400;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
+}
+.md >>> code {
+    margin-bottom: 40px;
 }
 .md >>> .imagec {
     text-align: center;
 }
-.md >>> p, .md >>> h1, .md >>> h3 {
-    line-height: 2em;
+.md >>> p {
+    line-height: 1.8;
 }
-.md >>> h1, .md >>> h3 {
-    line-height: 2em;
+.md >>> h3 {
     vertical-align: text-top;
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, .5);
 }
 .md >>> p img {
     display: block;
@@ -41,9 +46,18 @@ export default {
     max-width: 90%;
 }
 .md >>> p {
-    color: rgba(70, 70, 70, 1.0);
-    margin: 16px 0;
+    color: rgba(0, 0, 0, .7);
     text-align: left;
+    margin-block-end:30px;
+    margin-block-start:0px;
+    margin-bottom:30px;
+    margin-inline-end:0px;
+    margin-inline-start:0px;
+    margin-left:0px;
+    margin-right:0px;
+    margin-top:0px;
+    text-align:left;
+    text-size-adjust:100%;
 }
 .md >>> .r-u {
     text-decoration: #db3056 underline;
@@ -57,10 +71,7 @@ export default {
     color: rgba(0, 0, 0, .8);
     font-style: italic;
 }
-
-@media (min-width: 992px) {
-    .md {
-        font-size: 1.2em;
-    }
+.md >>> ol {
+    padding-left: 40px!important;
 }
 </style>

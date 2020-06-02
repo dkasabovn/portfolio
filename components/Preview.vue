@@ -1,6 +1,6 @@
 <template>
     <div ref="preview" class="preview-container">
-         <img id="preview-image" :src="$storyblokImage(blok.content.Preview, imageParams)" alt="blok.content.Title"/>
+         <img id="preview-image" :src="$storyblokImage(blok.content.Preview, '')" alt="blok.content.Title"/>
          <p id="preview-date">
              {{blok.created_at}}
          </p>

@@ -17,7 +17,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Bebas+Neue:400|Work+Sans:300,400,500|Playfair+Display:400&display=swap"
+        href: "https://fonts.googleapis.com/css?family=Bebas+Neue:400|Work+Sans:400,500|Playfair+Display:400|Lato:400&display=swap"
       }
     ]
   },

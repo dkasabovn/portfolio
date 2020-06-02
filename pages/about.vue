@@ -7,8 +7,8 @@
             <div class="col-lg-3 my-auto">
                 <h1 id="h1" class="text-center text-lg-left">About Me</h1>
                 <p class="about-text text-justify text-lg-left">
-                    I'm a student developer based in Austin, Tx. I specialize in C++, Kotlin, and Javascript.
-                    I am looking for a summer 2020 internship in or around the Austin area.
+                    I'm a student developer based in Austin, Tx. I love javascript, python, and C++.
+                    During the summer of 2020 I'll be working as a backend engineering intern for letskickit.app.
                     Feel free to <nuxt-link :to="'contact'" tag="span" class="red-link">Contact Me.</nuxt-link> 
                 </p>
             </div>

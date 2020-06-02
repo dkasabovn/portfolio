@@ -1,6 +1,6 @@
-# portfolio2
+# Nuxt.js based website
 
-> Pog project
+> D.K.N
 
 ## Build Setup
 

@@ -1,8 +1,7 @@
 import Prism from 'prismjs'
-import 'prismjs/themes/prism-tomorrow.css'
+import 'prismjs/themes/prism-coy.css'
 import 'prismjs/components/prism-json'
 import 'prismjs/components/prism-javascript'
-import 'prismjs/components/prism-c'
-import 'prismjs/components/prism-cpp'
+import 'prismjs/components/prism-python'
 
 export default Prism
