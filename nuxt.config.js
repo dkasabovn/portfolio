@@ -57,7 +57,8 @@ export default {
     ['storyblok-nuxt', {
       accessToken: process.env.APKEY,
       cacheProvider: 'memory'
-    }]
+    }],
+    '@nuxtjs/sitemap'
   ],
   /*
   ** Axios module configuration
@@ -73,6 +74,38 @@ export default {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+    }
+  },
+  sitemap: {
+    hostname: 'http://danielkasabov.com',
+    gzip: true,
+    routes: function (callback) {
+      const token = process.env.APKEY
+      const version = 'published'
+      let cache_version = 0
+  
+      
+      let routes = []
+      axios.get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${token}`).then((space_res) => {
+  
+         // timestamp of latest publish
+        cache_version = space_res.data.space.version
+  
+         // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
+        axios.get(`https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&cv=${cache_version}`).then((res) => {
+          Object.keys(res.data.links).forEach((key) => {
+            if (res.data.links[key].slug != 'home') {
+              routes.push({
+                'url': '/' + res.data.links[key].slug,
+                'changefreq': 'monthly',
+                'priority': 1
+              })
+            }
+          })
+  
+          callback(null, routes)
+        })
+      }) 
     }
   },
   generate: {

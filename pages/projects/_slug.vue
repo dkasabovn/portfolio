@@ -10,22 +10,29 @@
 import { mapGetters } from 'vuex'
 
 export default {
-    data() {
-        return {
-            story : null
-        }
-    },
-    mounted () {
-        
-        let storycontent = this.getStory(this.$route.params.slug)
+    async asyncData({ store, params, error }) {
+        let storycontent = store.getters.getStory(params.slug)
         if (storycontent != null) {
-            this.story = storycontent
+            return {
+                story: storycontent,
+                meta: storycontent.content.meta_field
+            }
         } else {
-            this.$nuxt.error({statusCode: 404, message: "Page could not be found"})
+            error({statusCode: 404, message: "Page could not be found"})
         }
-        this.$store.dispatch('refresh')
+        store.dispatch('refresh')
     },
-    computed: mapGetters(['getStory'])
+    computed: mapGetters(['getStory']),
+    head() {
+        return {
+            title: this.meta.title,
+            meta:  [
+                {hid: 'og:title', property: 'og:title', name: 'og:title',content: this.meta.title},
+                {hid: 'og:description', property: 'og:description', name: 'og:description', content: this.meta.description},
+                {hid: 'description', name: 'description', property: 'description', content: this.meta.description}
+            ]
+        }
+    }
 }
 </script>
 

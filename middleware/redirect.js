@@ -1,5 +1,5 @@
 export default function({route, redirect}) {
-    if (route.fullPath === "/") {
-        return redirect('/list')
+    if (route.fullPath === "/projects") {
+        return redirect('/')
     }
 }

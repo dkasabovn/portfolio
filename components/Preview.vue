@@ -1,11 +1,11 @@
 <template>
     <div ref="preview" class="preview-container">
-         <img id="preview-image" :src="$storyblokImage(blok.content.Preview, '')" alt="blok.content.Title"/>
+         <img id="preview-image" :src="$storyblokImage(blok.content.Preview.filename, '')" :alt="blok.content.Preview.alt"/>
          <p id="preview-date">
              {{blok.created_at}}
          </p>
          <p id="preview-title">
-             <nuxt-link :to="'projects/' + blok.name" tag="span">{{blok.content.Title}} <span style="color:#db3056;">&#8594;</span></nuxt-link>
+             <nuxt-link :to="'projects/' + blok.name" tag="span" class="link-underline">{{blok.content.Title}} <span style="color:#db3056;">&#8594;</span></nuxt-link>
          </p>
     </div>    
 </template>
@@ -54,5 +54,8 @@ p {
 #preview-image {
     max-width: 100%;
     height: auto;
+}
+.link-underline:hover {
+    text-decoration: underline;
 }
 </style>
