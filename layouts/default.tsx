@@ -5,12 +5,12 @@ export default function DefaultLayout(props) {
 
 	return (
 		<>
-			<div className="w-screen min-h-screen flex flex-col items-center bg-black">
-				<div className="container h-full">
+			<div className="w-screen min-h-screen flex flex-col items-center">
+				<div className="w-1/3 h-full">
 					<div className="flex flex-row justify-between items-center w-full mt-20">
 						<div className="">
 							<p className="font-semibold text-3xl thicc">
-								<span className="bg-white px-2 black">
+								<span className="bg-black px-2 text-white">
 									DKNDEV
 								</span>
 							</p>

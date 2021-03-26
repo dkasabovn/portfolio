@@ -31,28 +31,19 @@ const dummyArticleData = [
 
 export default function Home() {
 	return (
-		<div className="w-full mt-14 bg-black text-white text-lg fc">
+		<div className="w-full mt-14">
 			{/* Cowboy emoji &#x1f920; */}
-			<p className="fc text-white pr-10 py-4 text-xl">
-				<span className="text-green-600">dkn@dev</span>:> cat ~/about/interlude.txt
+			<p className="mb-14 text-gray-500">
+				Hey, I'm Daniel. I'm trying to keep this site minimal, but
+				here's the basics. I like to code, more-so backend than frontend
+				but react can be my jam. My fav languages are Go and Rust. AWS
+				is the main provider I use but gcp is also cool.
 			</p>
-			<p className="w-1/2">
-				Howdy partner! &#x1f920;<br></br>
-				I'm Daniel. I like to keep it quick so here we go.<br></br>
-				<br></br>
-				I'm a hobbyist dev who also programs for work. I primarily enjoy backend dev with Go and Rust but sometimes a good dose of React.js fills my hunger for frontend development. I'm currently working on a couple of projects which I'll update the site with. In the meantime explore the terminal.<br></br><br></br> <i>If you aren't a nerd, no biggie. Click the the help button and we can get you sorted</i>
-			</p>
-			<p className="fc text-white pr-10 py-4 text-xl">
-				<span className="text-green-600">dkn@dev</span>:> <input type="text" className="terminal-input"/>
-			</p>
-			<div className="">
-				
-			</div>
-			{/* <div>
+			<div>
 				<div className="">
 					{dummyArticleData.reverse().map((article, i) => (
 						<div key={i} className="flex flex-col mb-6">
-							<p className="font-semibold text-2xl thicc text-blue-800">
+							<p className="font-semibold text-2xl thicc text-blue-600">
 								{article.title}{" "}
 								<span className="text-sm text-gray-400 pl-2">
 									{article.views} views
@@ -67,7 +58,7 @@ export default function Home() {
 						</div>
 					))}
 				</div>
-			</div> */}
+			</div>
 		</div>
 	);
 }
