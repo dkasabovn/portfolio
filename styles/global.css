@@ -1,0 +1,25 @@
+body {
+    font-family: 'Inter', sans-serif!important;
+}
+
+.thicc {
+    font-family: 'Work Sans', sans-serif;
+}
+.fc {
+    font-family: 'Fira Code', monospace;
+}
+.terminal-input {
+    background: black;
+    color: white;
+    border: none;
+}
+
+.terminal-input::after {
+    content: 'aasdf';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+}
+
+::-webkit-scrollbar {display:none;}
