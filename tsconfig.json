@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/blog/test.mdx"  ],
   "exclude": [
     "node_modules"
   ]

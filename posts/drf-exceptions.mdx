@@ -1,0 +1,97 @@
+---
+title: Django Exception Handling
+date: July 2, 2020
+description: Simple exception handling in Django
+readTime: 5
+visible: true 
+---
+
+<p className="lead">
+    Django's default error handling is great when debugging locally. However on prod... not so much. Here's a lightweight solution I tested at my internship.
+</p>
+
+### Requirements
+
+Each error had to contain these fields:
+
+- *Status Code* (404, 500, 200)
+- *Error Code* (SERVER_ERROR, NOT_FOUND)
+- *Error Message* (User cannot access resource x)
+- *Friendly Error Message* (You must have x permissions to do y)
+
+In addition, these fields must be included in both explicitly raised errors and errors thrown by _Django_ such as a 404 when trying to access a nonexistent primary key.
+
+### Custom Class
+
+In order to accomplish this I created a custom class `KIException` that will contain the fields I need to report.
+
+```python
+class KIException(Exception):
+  class ERROR_CODE(Enum):
+    SERVER_ERROR = 0
+
+  def __init__(self, status_code, error_code, error_message, friendly_message, *args, **kwargs):
+    super().__init__(*args, **kwargs)
+    self.status_code = status_code
+    ....
+```
+
+In your own implementation, you should customize the fields to suit your needs.
+
+### Handling Exceptions
+
+To actually use our `KIException` we need to override Django's default exception handler.
+
+Before doing so I recommend creating a module named **common** where you will store these types of files.
+
+This can be done with `python3 manage.py startapp common`.
+
+In our **common** folder create a new file called `exception.py`. Inside of this file define a function named anything but _exception_handler_. The function should take in two params: `exception and context`.
+
+The context param gives relevant information surrounding the request while exception is... your exception.
+
+```python
+from rest_framework import exception_handler
+from rest_framework import Response
+
+from apps.common.[**KIException File**] import KIException
+
+def custom_exception_handler(exc, context):
+  response = exception_handler(exc, context)
+  
+  if response is not None:
+    """Exception was made by Django"""
+
+  if isinstance(exc, KIException):
+    """Raised a KIException in a view"""
+    # Do logging here
+    return Response({
+      "status_code": exc.status_code,
+      "error_code": exc.error_code.name,
+      "error_message": exc.error_message,
+      "friendly_message": exc.friendly_message
+      })
+
+  """An unexpected exception arose"""
+  return Response({"status_code": 500, ...})
+```
+
+We can see that there are 3 exceptions that will be handled.
+- Django raised exception
+- Custom exception (`KIException`)
+- Unexpected error (SERVER_ERROR 500)
+
+If we receive a `KIException` we can simply return the data that comes with the exception. Otherwise we can manually assemble the data and return it.
+
+To add this handler to your app add it to your `base.py`.
+
+```python
+REST_FRAMEWORK =  {
+  ...
+  'EXCEPTION_HANDLER': 'apps.common.exceptions.custom_exception_handler'
+}
+```
+
+### Conclusion
+
+This is a lightweight solution that can be implemented for custom error handling in Django. In a large production workflow a more traditional and professional logging system should be utilized, but if you're running a startup or a project this should be fine.

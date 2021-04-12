@@ -1,24 +1,38 @@
 import { useEffect, useRef } from "react";
+import Link from "next/link";
+import React from "react";
+import { useRouter } from "next/router";
+import ActiveLink from "../components/ActiveLink";
 
 export default function DefaultLayout(props) {
-	const canvasRef = useRef();
-
 	return (
-		<>
-			<div className="w-screen min-h-screen flex flex-col items-center">
-				<div className="w-1/3 h-full">
-					<div className="flex flex-row justify-between items-center w-full mt-20">
-						<div className="">
-							<p className="font-semibold text-3xl thicc">
-								<span className="bg-black px-2 text-white">
-									DKNDEV
-								</span>
-							</p>
-						</div>
+		<div className="min-h-screen w-full flex flex-col items-center">
+			<div className="w-1/3 h-full">
+				<div className="flex flex-row items-center justify-between w-full mt-20">
+					<div className="mr-3">
+						<p className="font-semibold text-3xl thicc">
+							<span className="bg-purple-600 px-2 text-white">
+								DKNDEV
+							</span>
+						</p>
 					</div>
-					<div>{props.children}</div>
+					<div className="flex-row flex font-semibold">
+						<ActiveLink href="/" mr={3}>
+							HOME
+						</ActiveLink>
+						{/* <ActiveLink href="/blog" mr={3}>
+								BLOG
+							</ActiveLink>
+							<ActiveLink href="/projects" mr={3}>
+								PROJECTS
+							</ActiveLink> */}
+						<ActiveLink href="/resume" mr={0}>
+							CV
+						</ActiveLink>
+					</div>
 				</div>
+				<div>{props.children}</div>
 			</div>
-		</>
+		</div>
 	);
 }

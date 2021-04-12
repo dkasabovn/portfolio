@@ -1,0 +1,184 @@
+---
+title: Nuxt content module
+date: December 12, 2020
+description: Make a portfolio in 2 mins
+readTime: 5
+visible: true 
+---
+
+<p className="lead">
+    Until now creating a custom portfolio using Nuxt.js and Markdown has been a pain. With Nuxt.js content we can do everything in one day.
+</p>
+
+### Don't want to read? Here's the TLDR
+
+The content module is almost perfectly designed for creating a simple portfolio. It improves on previous iterations of rendering markdown by allowing you to insert components, load in custom styles, and manage your files using an easy, mongodb-like api.
+
+### Config
+
+I'm assuming you have `node` and `npm` installed. If you don't, go ahead and get that out of the way (I recommend `nvm` if you're starting fresh).
+
+Lets create our `nuxt.js` project with:
+
+```
+npx create-nuxt-app
+```
+
+When you execute this command you'll be asked to configure your _Nuxt.js_ project. I went with this configuration:
+
+- UI framework: **Tailwind CSS**
+- Nuxt.js modules: **Content**
+- Linting tools: **Prettier**
+- Rendering mode: **Universal (SSR / SSG)**
+- Deployment target: **Static (Static/JAMStack hosting)**
+
+Once this step is done (could take a _couple of minutes_) init the Tailwind config with `npx tailwindcss init` and you're set up.
+
+### The Content Module
+
+To get started create a folder within `{src}/content` named `articles`. Then create a `.md` file, this will be your first article.
+
+To query markdown files, Nuxt.js uses frontmatter tags. These are `YAML` key - value pairs defined at the top of your markdown file.
+
+As a starting template I recommend creating `title`, `description`, and `read time` tags. Below is an example of this configuration.
+
+```yaml
+---
+title: "Portfolio in a Day: Nuxt.js Content"
+description: "Making static portfolios 200x easier"
+readTime: 21
+---
+```
+
+Next, you'll want a page to display all available articles.
+
+This can easily be done via `asyncData` and the `$content` parameter.
+
+Go to `index.vue` and insert this code into the script portion.
+
+```js
+async asyncData({ $content }) {
+    const doc = await $content('articles')
+        .only(['title', 'createdAt', 'description', 'readTime'])
+        .sortBy('createdAt', 'desc')
+        .fetch()
+    return {
+        doc
+    }
+}
+```
+
+This will return an array of objects with only the `title, createdAt, description, and readTime` attributes, sorted by the date the file was created.
+
+Now we want to display a list of these entries and allow the user to navigate to them.
+
+```html[index.vue]
+<template>
+    <div class="container flex items-center mx-auto">
+    <main class="mt-6 lg:mt-10 w-full flex items-center flex-col">
+        <section class="py-6 border-bottom-custom w-5/6" v-for="(e, i) of doc" :key="i">
+            <div class="text-gray-600 mb-3 flex justify-between items-center">
+                <p>{{cleanDate(e.createdAt)}}</p>
+                <p><i>{{e.readTime}} min read</i></p>
+            </div>
+            <nuxt-link :to="{ name: 'articles-slug', params: {slug: e.slug}}" class="lg:text-4xl text-3xl title-fancy">{{e.title}}</nuxt-link>
+            <div class="text-gray-700 mt-3 flex justify-between items-center">
+                <p>{{e.description}}</p>
+            </div>   
+        </section>
+    </main>
+</div>
+</template>
+```
+
+In the code above we utilize `v-for` to create a new element for each article. Within each element a `nuxt-link` is created, pointing towards `articles/{article_name}`.
+
+That last detail isn't trivial. Since each article is nested within the `articles` folder its resultant url is going to be prepended by _'articles'_.
+
+### Routing
+
+Now it's time to give that `nuxt-link` a destination.
+
+We will be using dynamic routes to accomplish this goal.
+
+Under pages create a folder named articles and within, a file called `_slug.vue`. By prepending an underscore, we tell nuxt that we want the route to be dynamic.
+
+Now we can navigate to `/articles/first-article` or `/articles/test123` and it would still resolve to our `/articles/_slug.vue` page.
+
+Remember that our `nuxt-link` will redirect us to the location of the file. In this case it would be `/articles/{article_name}`. This conviniently lines up with our dynamic pathing.
+
+Within `_slug.vue` we want to isolate the dynamic part of our path and load the coinciding file.
+
+```js[_slug.vue]
+<script>
+export default {
+    async asyncData({ params, $content }) {
+        const articlePath = params.slug
+        const article = await $content('articles', articlePath).fetch()
+
+        return {
+            article
+        }
+    }
+}
+</script>
+```
+
+We get the path using `route.params.slug` and then fetch the article, using the `$content` module.
+
+Once this is complete we have access to the internals of our article inside of our `_slug.vue` component.
+
+### Styling and Finishing
+
+Rendering our file's content in `_slug.vue` is about as easy as it gets with Nuxt.js. All you have to do is pass the data to the `nuxt-content` component and you're done.
+
+```html[_slug.vue]
+<template>
+<div class="container flex items-center mx-auto w-full">
+    <main class="mx-auto mb-10">
+        <div class="pt-10">
+            <p class="text-5xl py-6">{{article.title}}</p>
+            <p class="text-gray-500 pb-3">{{article.createdAt.substring(0,10)}} &mdash; <i>{{article.readTime}} min read</i></p>
+        </div>
+        <nuxt-content :document="article" class="prose prose-sm sm:prose lg:prose-lg xl:prose-2xl mx-auto"/>
+    </main>
+</div>
+</template>
+```
+
+I've also gone ahead and added the date and time created for this example. 
+
+To style the markdown I'm using the `@tailwindcss/typography` module, and I really recommend it if you're more-so a developer rather than designer.
+
+It can be easily added to your by installing the plugin with `npm i @tailwindcss/typography` and adding it to your tailwind.config.js file as such.
+
+```js[tailwind.config.js]
+module.exports = {
+  future: {
+    // removeDeprecatedGapUtilities: true,
+    // purgeLayersByDefault: true,
+  },
+  purge: [
+    './components/**/*.{vue,js}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './nuxt.config.{js,ts}'
+  ],
+  theme: {
+    extend: {},
+  },
+  variants: {},
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
+}
+```
+
+### Conclusion
+
+Although a headless CMS is probably more convenient when implemented correctly, I find that creating a blog is easier with the content module.
+
+In fact I've transitioned from a headless CMS to the content module simply because I prefer writing in markdown rather than using a pre-built solution like Storyblok, GraphCMS, and etc.
+
+In the future I'll probably implement my own headless CMS to facilitate my own needs but for now I'm perfectly situated with the content module and I'm happy that the Nuxt.js team keeps innovating.
