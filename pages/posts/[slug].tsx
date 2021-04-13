@@ -7,6 +7,7 @@ import { postFilePaths, POSTS_PATH } from "../../lib/mdx";
 import path from "path";
 import Image from "next/image";
 import ViewCount from "../../components/ViewCount";
+import SEOHead from "../../components/SEOHead";
 
 const components = {
 	Image,
@@ -16,11 +17,16 @@ export default function PostPage({ source, frontmatter, slug }) {
 	const content = hydrate(source, { components });
 	return (
 		<div className="my-10 max-w-full">
+			<SEOHead
+				title={frontmatter.title}
+				description={frontmatter.description}
+			></SEOHead>
 			<div className="mt-10 mb-6">
 				<h1 className="text-5xl font-bold mb-6">{frontmatter.title}</h1>
 				<div className="flex flex-row justify-between text-sm">
 					<p>
-						{frontmatter.date} {"-->"} 23 min read
+						{frontmatter.date} {"-->"} {frontmatter.readTime} min
+						read
 					</p>
 					<p>
 						<ViewCount slug={slug} />
