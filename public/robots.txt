@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://danielkasabov.com
+
+# Sitemaps
+Sitemap: https://danielkasabov.com/sitemap.xml
