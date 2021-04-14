@@ -25,7 +25,7 @@ class MyDocument extends Document {
 	}
 
 	render() {
-		const isProduction = !this.props.isDevelopment;
+		const isProduction = true;
 		const ga_tracker = process.env.GA_ID;
 		return (
 			<Html lang="en">
