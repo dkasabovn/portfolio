@@ -4,20 +4,23 @@ import React from "react";
 import { useRouter } from "next/router";
 import ActiveLink from "../components/ActiveLink";
 import SEOHead from "../components/SEOHead";
+import ThemeSwitcher from "../components/ThemeSwitcher";
 
 export default function DefaultLayout(props) {
 	return (
 		<div className="min-h-screen w-full flex flex-col items-center">
 			<SEOHead />
+			<ThemeSwitcher />
 			<div className="lg:w-1/3 w-11/12 h-full">
-				<div className="flex flex-row items-center justify-between w-full mt-20">
+				<div className="flex flex-row items-center justify-between w-full lg:mt-20 mt-5">
 					<div className="mr-3">
 						<p className="font-semibold text-3xl thicc">
-							<span className="bg-purple-600 px-2 text-white">
+							<span className="bg-purple-600 dark:text-black dark:bg-purple-400 px-2 text-white">
 								DKN/DEV
 							</span>
 						</p>
 					</div>
+
 					<div className="flex-row flex font-semibold">
 						<ActiveLink href="/" mr={3}>
 							HOME

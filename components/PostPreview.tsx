@@ -11,7 +11,7 @@ export default function PostPreview({ article }) {
 	const views = data?.viewCount;
 
 	return (
-		<div className="flex flex-col mb-6">
+		<div className="flex flex-col mb-6 dark:text-white">
 			<Link
 				as={`/posts/${article.filePath.replace(/\.mdx?$/, "")}`}
 				href={`/posts/[slug]`}

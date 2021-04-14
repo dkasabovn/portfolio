@@ -22,8 +22,10 @@ export default function PostPage({ source, frontmatter, slug }) {
 				description={frontmatter.description}
 			></SEOHead>
 			<div className="mt-10 mb-6">
-				<h1 className="text-5xl font-bold mb-6">{frontmatter.title}</h1>
-				<div className="flex flex-row justify-between text-sm">
+				<h1 className="text-5xl font-bold mb-6 dark:text-white">
+					{frontmatter.title}
+				</h1>
+				<div className="flex flex-row justify-between text-sm dark:text-gray-300">
 					<p>
 						{frontmatter.date} {"-->"} {frontmatter.readTime} min
 						read
@@ -33,7 +35,9 @@ export default function PostPage({ source, frontmatter, slug }) {
 					</p>
 				</div>
 			</div>
-			<main className="prose mx-0 max-w-none">{content}</main>
+			<main className="prose dark:prose-dark mx-0 max-w-none">
+				{content}
+			</main>
 		</div>
 	);
 }

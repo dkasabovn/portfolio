@@ -13,7 +13,7 @@ export default function Home({ posts }) {
 	return (
 		<div className="w-full my-10">
 			{/* Cowboy emoji &#x1f920; */}
-			<p className="mb-14 text-gray-500 text-justify font-medium">
+			<p className="mb-14 text-gray-500 dark:text-gray-300 text-justify font-medium">
 				Hey, I'm Daniel. I'm trying to keep this site minimal, but
 				here's the basics. Programming is my hobby and career. I am more
 				backend oriented, but I end up spending a lot of time using
@@ -21,7 +21,7 @@ export default function Home({ posts }) {
 				a close contender.
 			</p>
 			<div className="mb-14">
-				<p className="text-4xl thicc mb-8">Articles</p>
+				<p className="text-4xl thicc dark:text-white mb-8">Articles</p>
 				<div className="">
 					{sortedArticles.map((article, i) =>
 						article.data.visible ? (

@@ -14,7 +14,7 @@ class MyDocument extends Document {
 
 	render() {
 		return (
-			<Html>
+			<Html lang="en">
 				<Head>
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link
@@ -31,7 +31,7 @@ class MyDocument extends Document {
 					/>
 					<link rel="icon" href="/logo.png" />
 				</Head>
-				<body>
+				<body className="dark:bg-black">
 					<Main />
 					<NextScript />
 				</body>

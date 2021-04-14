@@ -2,10 +2,8 @@ import { useRouter } from "next/router";
 
 export default function ActiveLink({ children, href, mr }) {
 	const router = useRouter();
-	const style = {
-		marginRight: mr * 0.25 + "rem",
-		color: router.asPath === href ? "#7C3AED" : "#000",
-	};
+	const active = `dark:text-purple-400 text-purple-600 mr-${mr}`;
+	const inactive = `dark:text-white text-black mr-${mr}`;
 
 	const handleClick = (e) => {
 		e.preventDefault();
@@ -13,7 +11,11 @@ export default function ActiveLink({ children, href, mr }) {
 	};
 
 	return (
-		<a href={href} onClick={handleClick} style={style}>
+		<a
+			href={href}
+			onClick={handleClick}
+			className={`${router.asPath === href ? active : inactive}`}
+		>
 			{children}
 		</a>
 	);
