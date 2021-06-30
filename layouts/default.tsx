@@ -32,7 +32,7 @@ export default function DefaultLayout(props) {
 								PROJECTS
 							</ActiveLink> */}
 						<ActiveLink href="/resume" mr={0}>
-							CV & CONTACT
+							CV
 						</ActiveLink>
 					</div>
 				</div>
