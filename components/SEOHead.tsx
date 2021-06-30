@@ -32,7 +32,7 @@ export default function SEOHead({ title, description }: SEOProps) {
 					content={
 						description
 							? description
-							: "Developer @ TAMU '25. Go and Rust enthusiast. Next.js enjoyer. XQC viewer."
+							: "Developer @ TAMU '25. Go and Rust enthusiast. Next.js enjoyer."
 					}
 				/>
 				<meta
