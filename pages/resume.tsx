@@ -43,12 +43,7 @@ export default function Resume() {
 			<div className="lg:absolute" style={{ left: "50%" }}>
 				<div className="lg:relative" style={{ left: "-50%" }}>
 					<img
-						src="/static/images/resume-1.png"
-						alt=""
-						className="filter dark:invert"
-					/>
-					<img
-						src="/static/images/resume-2.png"
+						src="/static/images/resume-1.jpg"
 						alt=""
 						className="filter dark:invert"
 					/>
