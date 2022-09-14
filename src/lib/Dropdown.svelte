@@ -10,14 +10,14 @@ import { each } from "svelte/internal";
 	const toggle = () => (isOpen = !isOpen);
 </script>
 
-<div class="relative text-white w-full">
-	<button class="f-inter text-black bg-yellow-green w-full text-center" on:click={toggle}>
+<div class="relative w-full text-white">
+	<button class="w-full text-center text-black f-inter bg-yellow-green" on:click={toggle}>
 		&#8623; &mdash; {options[selectedOption]} &mdash; &#8623;
 	</button>
 	{#if isOpen}
 		<div class="w-full" transition:slide={{duration: 100}}>
-			{#each options as option}
-				<p class="text-white f-inter text-center w-full">{option}</p>
+			{#each options as option, i}
+				<p class="w-full text-center text-white f-inter">{i !== selectedOption ? option : ""}</p>
 			{/each}
 		</div>
 	{/if}

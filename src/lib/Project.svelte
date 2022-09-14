@@ -29,10 +29,10 @@
 		on:click={toggle}>READ MORE &#8628;</button
 	>
 	{#if isOpen}
-		<div class="pt-10 pl-5 flex flex-col gap-y-10" transition:slide={{ duration: 300 }}>
-			<p class="text-xl yellow-green">{experience.technologies.join(" ")}</p>
-			<p class="text-xl text-justify">
-				{experience.description}
+		<div class="flex flex-col gap-y-10 pt-10 pl-5" transition:slide={{ duration: 300 }}>
+			<p class="w-full text-xl text-justify yellow-green">{experience.technologies.join(" ")}</p>
+			<p class="flex flex-col gap-y-5 text-xl text-justify">
+				{@html experience.description}
 			</p>
 		</div>
 	{/if}
