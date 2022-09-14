@@ -71,6 +71,14 @@
 				// @ts-ignore
 				renderer.render(scene, camera);
 			}
+
+			window?.addEventListener('resize', () => {
+				if (container && renderer) {
+					camera.aspect = container.clientWidth / container.clientHeight
+					camera.updateProjectionMatrix();
+					renderer.setSize(container.clientWidth, container.clientHeight);
+				}
+			})
 		}
 	});
 </script>

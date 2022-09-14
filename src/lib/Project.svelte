@@ -19,13 +19,13 @@
 	<p>{'[/>'} {experience.index.toString().padStart(3, '0')}</p>
 	<p
 		class={isOpen
-			? 'text-3xl pl-5 text-black bg-yellow-green transition-all'
-			: 'text-3xl pl-5 text-white transition-all'}
+			? 'text-3xl sm:pl-5 text-black bg-yellow-green transition-all'
+			: 'text-3xl sm:pl-5 text-white transition-all'}
 	>
 		{experience.name} &mdash; {experience.details}
 	</p>
 	<button
-		class={isOpen ? 'pl-5 transition-all' : 'pl-5 yellow-green transition-all'}
+		class={isOpen ? 'sm:pl-5 transition-all' : 'pl-5 yellow-green transition-all'}
 		on:click={toggle}>READ MORE &#8628;</button
 	>
 	{#if isOpen}
