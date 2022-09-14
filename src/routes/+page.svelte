@@ -30,7 +30,7 @@
 			name: 'Gamma',
 			details: 'Co-Founder & Developer',
 			description: `
-				<a href="https://www.gammatx.app" target="_blank" style="text-decoration: underline">AdvancePay</a>
+				<a href="https://www.gammatx.app" target="_blank" style="text-decoration: underline">GammaTX</a>
 				<p>Developing an application to automate identity access and managment of UT Austin student social events. Part of the Antler VC c/o '22</p>
 			`,
 			technologies: ['DOCKER', 'GO', 'REDIS', 'FLUTTER', 'REACT', 'HUGO', 'WEBGL', 'SQL']
