@@ -58,7 +58,7 @@
 		},
 		{
 			index: 5,
-			name: 'Audius Ehanced',
+			name: 'Audius Enhanced',
 			details: 'Developer',
 			description: `
 				<a href="https://audiusenhanced.com" target="_blank" style="text-decoration: underline">Audius Enhanced</a>
