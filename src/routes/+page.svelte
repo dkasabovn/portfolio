@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Dropdown from '$lib/Dropdown.svelte';
 	import Pepe from '$lib/Pepe.svelte';
 	import Project from '$lib/Project.svelte';
 	import Nav from '../lib/Nav.svelte';
@@ -41,12 +42,15 @@
 			<div>CONTACT</div>
 		</div>
 		<div class="flex-1 w-full">
-			<div class="w-full flex flex-row justify-center py-10">
+			<div class="w-full flex flex-col justify-center pt-10">
 				<p class="f-code text-white text-justify">
 					My name is Daniel Kasabov-Nouvion. I'm working as the backend lead for AdvancePay.io and
 					studying ECE at UT Austin. I enjoy solving problems with software and have a variety of
 					interests in the field of computing. *Site is in the middle of an upgrade*
 				</p>
+			</div>
+			<div class="py-10">
+				<Dropdown options={["PROJECTS", "ARTICLES", "TERMINAL"]}/>
 			</div>
 			<div class="flex flex-col w-full gap-y-10">
 				<Project

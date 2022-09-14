@@ -17,8 +17,6 @@
 
 	onMount(() => {
 		if (container !== null) {
-			const clock = new THREE.Clock();
-
 			renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 			renderer.setPixelRatio(window.devicePixelRatio);
 			renderer.setSize(container.clientWidth, container.clientHeight);
