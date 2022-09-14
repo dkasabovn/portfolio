@@ -16,6 +16,11 @@
 	});
 
 	onMount(() => {
+		// Load dracoloader ASAP to decrease Time to Load
+		const dracoLoader = new DRACOLoader();
+		dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.3/');
+		dracoLoader.preload();
+
 		if (container !== null) {
 			renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 			renderer.setPixelRatio(window.devicePixelRatio);
@@ -46,8 +51,6 @@
 			const light = new THREE.AmbientLight(0xccff00, 5);
 			scene.add(light);
 
-			const dracoLoader = new DRACOLoader();
-			dracoLoader.setDecoderPath('js/libs/draco/gltf/');
 			const loader = new GLTFLoader();
 			loader.setDRACOLoader(dracoLoader);
 			loader.load(
@@ -74,11 +77,11 @@
 
 			window?.addEventListener('resize', () => {
 				if (container && renderer) {
-					camera.aspect = container.clientWidth / container.clientHeight
+					camera.aspect = container.clientWidth / container.clientHeight;
 					camera.updateProjectionMatrix();
 					renderer.setSize(container.clientWidth, container.clientHeight);
 				}
-			})
+			});
 		}
 	});
 </script>
