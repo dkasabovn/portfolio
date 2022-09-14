@@ -83,12 +83,10 @@
 <div class="flex-1 w-full">
 	<div class="flex flex-col justify-center pt-10 w-full">
 		<p class="text-justify text-white f-code">
-			Howdy, I'm Daniel Kasabov-Nouvion. I'm a backend lead at AdvancePay.io and a full-time student at <span
-				class="sun-orange">UT Austin</span
-			>
-			studying ECE. I'm passionate about solving hard problems with clean code. Take a look at what keeps
-			me busy and shoot me an
-			<span on:click={copyEmailToClipboard} class="cursor-pointer yellow-green hover:border-b-2"
+			Howdy, I'm Daniel Kasabov-Nouvion. I'm a backend lead at AdvancePay.io and a full-time student
+			at UT Austin studying ECE. I'm passionate about solving hard problems with clean code. Take a
+			look at what keeps me busy and shoot me an
+			<span on:click={copyEmailToClipboard} class="cursor-pointer hover:border-b-2"
 				>email <svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
