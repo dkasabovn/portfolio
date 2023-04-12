@@ -16,10 +16,10 @@
 		},
 		{
 			index: 1,
-			name: 'AdvancePay',
+			name: 'Channelcrawler.com',
 			details: 'Backend Lead',
 			description: `
-				<a href="https://channelcrawler.com/" target="_blank" style="text-decoration: underline">AdvancePay</a>
+				<a href="https://channelcrawler.com/" target="_blank" style="text-decoration: underline">Channelcrawler</a>
 				<p>Designed, implemented, and deployed distributed architecture for processing raw data from the YouTube API.</p>
 			`,
 			technologies: ['KUBERNETES', 'TERRAFORM', 'GO', 'PSQL', 'AWS', 'SQS', 'SQL']
