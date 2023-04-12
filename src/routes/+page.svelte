@@ -6,17 +6,26 @@
 	const experiences = [
 		{
 			index: 0,
+			name: 'ARM',
+			details: 'Systems Research',
+			description: `
+				<a href="https://www.arm.com/" target="_blank" style="text-decoration: underline">ARM</a>
+				<p>Will be interning as a systems research intern at ARM during the summer of 2023</p>
+			`,
+			technologies: ['LINUX', 'C++', 'ARM', 'FPGA']
+		},
+		{
+			index: 1,
 			name: 'AdvancePay',
 			details: 'Backend Lead',
 			description: `
-				<a href="https://www.advancepay.io" target="_blank" style="text-decoration: underline">AdvancePay</a>
-				<p>Designed, implemented, and deployed distributed architecture for processing raw data from the YouTube API. 
-				Managed a team of two contracted developers by employing agile sprints and Jira to track tickets & epics.</p>
+				<a href="https://channelcrawler.com/" target="_blank" style="text-decoration: underline">AdvancePay</a>
+				<p>Designed, implemented, and deployed distributed architecture for processing raw data from the YouTube API.</p>
 			`,
 			technologies: ['KUBERNETES', 'TERRAFORM', 'GO', 'PSQL', 'AWS', 'SQS', 'SQL']
 		},
 		{
-			index: 1,
+			index: 2,
 			name: 'RStudio',
 			details: 'DevOps / Infra',
 			description: `
@@ -24,16 +33,6 @@
 					and ensuring that there would be no disruptions to customers.</p>
 				`,
 			technologies: ['DOCKER', 'GITHUB ACTIONS', 'CI/CD', 'GOSS', 'SHELL', 'LINUX']
-		},
-		{
-			index: 2,
-			name: 'Gamma',
-			details: 'Co-Founder & Developer',
-			description: `
-				<a href="https://www.gammatx.app" target="_blank" style="text-decoration: underline">GammaTX</a>
-				<p>Developing an application to automate identity access and managment of UT Austin student social events. Part of the Antler VC c/o '22</p>
-			`,
-			technologies: ['DOCKER', 'GO', 'REDIS', 'FLUTTER', 'REACT', 'HUGO', 'WEBGL', 'SQL']
 		},
 		{
 			index: 3,
@@ -83,8 +82,8 @@
 <div class="flex-1 w-full">
 	<div class="flex flex-col justify-center pt-10 w-full">
 		<p class="text-justify text-white f-code">
-			Howdy, I'm Daniel Kasabov-Nouvion. I'm a backend lead at AdvancePay.io and a full-time student
-			at UT Austin studying ECE. I'm passionate about solving hard problems with clean code. Take a
+			Howdy, I'm Daniel Kasabov-Nouvion. I'm a part-owner of channelcrawler.com and a full-time student
+			at UT Austin studying ECE. I'm interested in FPGAs, Low-level programming, and hardware optimization. Take a
 			look at what keeps me busy and shoot me an
 			<span on:click={copyEmailToClipboard} class="cursor-pointer hover:border-b-2"
 				>email <svg
