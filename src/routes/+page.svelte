@@ -12,7 +12,7 @@
 				<a href="https://www.arm.com/" target="_blank" style="text-decoration: underline">ARM</a>
 				<p>Will be interning as a systems research intern at ARM during the summer of 2023</p>
 			`,
-			technologies: ['LINUX', 'C++', 'ARM', 'FPGA']
+			technologies: ['LINUX', 'C++', 'ARM ASM', 'C', 'K3S', 'EMBEDDED']
 		},
 		{
 			index: 1,
