@@ -17,7 +17,7 @@
 		{
 			index: 1,
 			name: 'Channelcrawler.com',
-			details: 'Backend Lead',
+			details: 'Co-owner',
 			description: `
 				<a href="https://channelcrawler.com/" target="_blank" style="text-decoration: underline">Channelcrawler</a>
 				<p>Designed, implemented, and deployed distributed architecture for processing raw data from the YouTube API.</p>
