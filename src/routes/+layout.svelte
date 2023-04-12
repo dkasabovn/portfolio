@@ -10,7 +10,7 @@
 				class="flex flex-row justify-between items-center mt-5 text-2xl text-white sm:text-3xl f-inter yellow-green"
 			>
 				<a
-					href="https://drive.google.com/file/d/1h0YVErrcSpJg2EaRhGKCerW7pm4cYbXD/view?usp=sharing"
+					href="https://drive.google.com/file/d/1hdhVjmjskEGi1h3JE6AB43Xa7NBFSiGa/view?usp=sharing"
 					target="_blank">RESUME</a
 				>
 				<a class="w-20 h-20 sm:w-32 sm:h-32 noselect" href="/">
