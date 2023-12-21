@@ -5,17 +5,37 @@
 
 	const experiences = [
 		{
+			index: -1,
+			name: 'Texas UCF',
+			details: 'Director',
+			description: `
+				<a href="https://www.texasucf.org/" target="_blank" style="text-decoration: underline">UCF</a>
+				<p>Resident Nerd @ Texas UCF</p>
+			`,
+			technologies: ['PY', 'RUST', 'FTX']
+		},
+		{
 			index: 0,
+			name: 'IMC Trading',
+			details: 'Software Engineering',
+			description: `
+				<a href="https://www.imc.com/" target="_blank" style="text-decoration: underline">IMC</a>
+				<p>Incoming Software Engineer @ IMC</p>
+			`,
+			technologies: ['JAVA', 'CPP']
+		},
+		{
+			index: 1,
 			name: 'ARM',
 			details: 'Systems Research',
 			description: `
 				<a href="https://www.arm.com/" target="_blank" style="text-decoration: underline">ARM</a>
-				<p>Will be interning as a systems research intern at ARM during the summer of 2023</p>
+				<p>Investigated the impact of CXL-memory latency on various applications, created a runtime tool to estimate impact, and tested function offload as a possible solution</p>
 			`,
-			technologies: ['LINUX', 'C++', 'ARM ASM', 'C', 'K3S', 'EMBEDDED']
+			technologies: ['LINUX', 'C++', 'ARM ASM', 'C', 'CXL', 'PYTHON']
 		},
 		{
-			index: 1,
+			index: 2,
 			name: 'Channelcrawler.com',
 			details: 'Co-owner',
 			description: `
@@ -25,7 +45,7 @@
 			technologies: ['KUBERNETES', 'TERRAFORM', 'GO', 'PSQL', 'AWS', 'SQS', 'SQL']
 		},
 		{
-			index: 2,
+			index: 3,
 			name: 'RStudio',
 			details: 'DevOps / Infra',
 			description: `
@@ -35,7 +55,7 @@
 			technologies: ['DOCKER', 'GITHUB ACTIONS', 'CI/CD', 'GOSS', 'SHELL', 'LINUX']
 		},
 		{
-			index: 3,
+			index: 4,
 			name: 'Kronologic',
 			details: 'Backend',
 			description: `
@@ -44,26 +64,6 @@
 				Created CRUD endpoints for public api using Protobuf, allowing clients to automate client importing en masse.</p>
 			`,
 			technologies: ['DOCKER', 'GO', 'SQS', 'KUBERNETES', 'DATADOG', 'PROTOBUF', 'SQL']
-		},
-		{
-			index: 4,
-			name: 'Slash/AI',
-			details: 'Developer',
-			description: `
-				<a href="https://dkasabovn.github.io/slashai/" target="_blank" style="text-decoration: underline">Slash/AI</a>
-				<p>Developed AI that generates cmoments from code using PyTorch, NLTK, and Treesitter; Trained on 40,000+ snippets in Go, Python, Java, and JavaScript. Won 2nd place HackTX GCP '21.</p>
-			`,
-			technologies: ['PYTHON', 'PYTORCH', 'NLTK', 'TREESITTER', 'GCP']
-		},
-		{
-			index: 5,
-			name: 'Audius Enhanced',
-			details: 'Developer',
-			description: `
-				<a href="https://audiusenhanced.com" target="_blank" style="text-decoration: underline">Audius Enhanced</a>
-				<p>A tool to calculate artist metrics on the audius platform [deprecated]</p>
-			`,
-			technologies: ['NODEJS', 'SQL']
 		}
 	];
 
@@ -82,9 +82,9 @@
 <div class="flex-1 w-full">
 	<div class="flex flex-col justify-center pt-10 w-full">
 		<p class="text-justify text-white f-code">
-			Howdy, I'm Daniel Kasabov-Nouvion. I'm a part-owner of channelcrawler.com and a full-time student
-			at UT Austin studying ECE. I'm interested in FPGAs, Low-level programming, and hardware optimization. Take a
-			look at what keeps me busy and shoot me an
+			Howdy, I'm Daniel Kasabov-Nouvion. I'm a full time ECE Student @ UT Austin. I'll be working at IMC Trading this summer.
+			Interested in anything low level. Take a
+			look at what I've done and shoot me an
 			<span on:click={copyEmailToClipboard} class="cursor-pointer hover:border-b-2"
 				>email <svg
 					xmlns="http://www.w3.org/2000/svg"
