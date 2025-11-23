@@ -2,7 +2,6 @@
 	--bg: #ffffff;
 	--text: #000000;
 	--border: 2px solid var(--text);
-	--noise-bg: none;
 	font-family: 'Times New Roman', 'TimesNewRoman', 'Times', serif;
 	color: var(--text);
 	background-color: var(--bg);
@@ -17,10 +16,6 @@
 body {
 	margin: 0;
 	background: var(--bg);
-	background-image: var(--noise-bg);
-	background-size: 2600px 2600px;
-	background-repeat: no-repeat;
-	background-position: center;
 	color: var(--text);
 	line-height: 1.5;
 	font-size: 15px;
@@ -176,6 +171,22 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	gap: 18px;
+}
+
+.blog-shell {
+	display: flex;
+	justify-content: center;
+	padding: 32px 18px 64px;
+	min-height: 100vh;
+}
+
+.post-shell {
+	width: 100%;
+	max-width: 760px;
+	background: rgba(255, 255, 255, 0.9);
+	border: 1px solid var(--text);
+	padding: 28px 24px;
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .post-home {
