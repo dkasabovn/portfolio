@@ -4,7 +4,7 @@ date: '2025-12-13'
 summary: this should be it's own page
 ---
 
-# TW: J*bs and Empl*yment
+# TW: J\*bs and Empl\*yment
 
 ## Contact: dkasabovn #at# gmail |dot| com
 
