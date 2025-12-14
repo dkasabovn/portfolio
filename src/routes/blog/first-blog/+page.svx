@@ -1,7 +1,50 @@
 ---
-title: First Blog
-date: '2025-01-01'
-summary: hi :-)
+title: About & Contact
+date: '2025-12-13'
+summary: this should be it's own page
 ---
 
-hi :-)
+## Contact: dkasabovn #at# gmail |dot| com
+
+## In short:
+
+#### Professionally:
+- Interned way too many times but got a chance to try everything from ML &rarr; Hardware
+- Worked at a couple of quant firms
+- Worked at many startups part-time during school
+- Strongly believe there is no domain that is more interesting than another. Although I tend to gravitate towards hardware-ish things
+- I Work on unfinished side projects all the time. Though I might just finish one soon!
+- Maybe i'll finish my ECE degree from UT. I took all the useful classes and now I just have extra-curriculars and history classes left so probably not
+
+#### Personally:
+- I like tennis and badminton. If you're in SF from Jan to March and want to hit pls let me know
+- <a href="https://open.spotify.com/user/w5uem31qrlxeigogdf1upgq8r?si=b47940baa4a74c6c" style="color: green;" target="_blank">Spotify</a> (ignore the `__builtin` playlist)
+- I play League quite a bit, I've been trying to get off with the advent of YC
+- My favorite city for fun is New York, and Funchal for relaxation
+- I've traveled to 40-60 countries (I will count one day). I am also pretty good at geoguessr as a result
+- Being Russian, I am in fact well read on Russian literature and do enjoy it
+- I also speak Russian fluently and I'm pretty good at Spanish as I speak it when I play DoTA 2
+- I'll take any opportunity to do anything that will culture me | I don't have work
+
+#### Favorite
+
+Quote:
+> "the [drug] addict is just as tantalized by the spoon as he is the [drug]" - Some Random Twitter User
+
+Movie / Book / Show:
+> Pusher / Brothers Karamazov / Tatami Galaxy
+
+Song / Album:
+> <a href="https://www.youtube.com/watch?v=H86doZD9OMQ" target="_blank">If I Was A Folkstar - The Avalanches</a> / Volume Alpha - C418
+
+Languages:
+> R\*st & C++ (specifically Variadic templates)
+
+Animal:
+> Seal (undisputable)
+
+Thing to hate on:
+> Twitter tech larpers
+
+Game:
+> League of Legends :P
