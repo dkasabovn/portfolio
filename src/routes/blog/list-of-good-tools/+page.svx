@@ -4,23 +4,12 @@ date: '2025-12-14'
 summary: ^ title
 ---
 
-### Note:
-There are so many things in tech that I use with hesitancy like:
-- AWS (thanks for making my egress / ingress fees >>> my compute rlly awesome)
-- Databases (think of the wasted CPU cycles)
-- NixOS (I really hate that it's the best option for maintaining a clean setup)
-- much more...
-
-That I want to list out the things I actually enjoy using.
-
-
 ### List:
 - Helix. Not having to spend 8 hours configuring Helix is the best part about it. I don't care that it doesn't support terminals because I don't have to sit
 in front of my coworkers like a freak explaining 'oh i just need 8 hours to install my Nvim plugins'. Genuinely such a great thing to exist.
 - Victoria Logs / Metrics. If you use Loki or Prometheus you should just switch. It's so easy to setup and performs so much better.
-- Devenv.sh on NixOS. I know there's like a huge fanbase for NixOS, but the docs suck so so so much. All I want is to be able to isolate every projects toolchains from
-each other so I don't deal with problems later. Surely NixOS is not the best iteration of this concept, but it's what we have. Devenv.sh makes Nix be actually useable
-and I really appreciate the devs for making it.
+- Devenv.sh on NixOS. I know there's like a huge fanbase for NixOS, but the docs are pretty hard to parse. All I want is to be able to isolate every projects toolchains from
+each other so I don't deal with problems later. Devenv.sh makes Nix be actually useable and I really appreciate the devs for making it.
 - Sqlite. Databases are so incredibly unnecessary until you start doing distributed computing. If you're doing something that's computationally easy and/or at low scale
 save yourself any headache and just use Sqlite.
 - Opus 4.5 is the smartest AI as of Dec 2025. It's actually rlly good and has made my job so much easier.
@@ -33,7 +22,4 @@ It's hard to motivate why it's so much better unless you've tried an alternative
 because K8S is just already user friendly, straight-forward, and feature-rich.
 - K9S. The only issue with K8S is the repetitive commands. K9S solves this and also saves me like min 5 hours / week whenever i'm doing infra shit. If i'm ever a billionaire
 i'm retiring the guy who made it.
-- Kalshi. Have you looked at Polymarket docs?
 - Svelte. So simple and so good.
-- Pixotine. I don't use nictoine consitently but sometimes it's nice to have on a sunny day when working. I think Nicotine toothpics are the penultimate iteration of
-nicotine administration and I think Pixotine is the best brand.
