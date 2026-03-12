@@ -10,7 +10,7 @@ summary: this should be it's own page
 
 Songs (In no order):
 - If I Was A Folkstar - The Avalanches
-- Literally anything by LeMair (once his bum ass activates his Spotify account again)
+- Skull Crusher - LeMair
 - Losing My Religion - R.E.M.
 - Three - Cult Member
 - The American Experiment - MGNA Crrrta
@@ -25,26 +25,17 @@ Songs (In no order):
 
 Foods:
 - Red Caviar on Toast With Butter
-- Papaya Salad (w/ 5-6 chilis)
 - Smoked Herring, Potatoes, and Green Onions
-- A whole chicken from Central Market in ATX
-- Red Bean Sesame Balls from Mei Lai Wah
-- Anything prepared by my lovely roommate for me
-- Chongqing Laziji (Specifically when eaten with <a href="https://www.linkedin.com/in/alex-huang-utaustin/" target="_blank">Alex Huang</a>)
-- A bag of Takis after 10:00 PM when I shouldn't
-- NOT HYUN NYC. DO NOT GO TO HYUN. A5 IS NOT GOOD.
+- Il Borgo, SF
 
 Quote:
 > "the [drug] addict is just as tantalized by the spoon as he is the [drug]" - Some Random Twitter User
 
-Movie / Book / Show:
-> Pusher / Brothers Karamazov / Tatami Galaxy
+Movie / Book:
+> Trainspotting / Brothers Karamazov 
 
 Languages:
-> R\*st & C++ (specifically Variadic templates)
-
-Animal:
-> Seal (undisputable)
+> C++ & Rust & Haskell
 
 Thing to hate on:
 > Twitter tech larpers
