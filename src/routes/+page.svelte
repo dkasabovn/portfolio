@@ -2,15 +2,22 @@
 	import { onMount } from 'svelte';
 	import Eye from '$lib/Eye.svelte';
 
-	type Post = {
-		title: string;
-		date: string;
-		summary: string;
-		slug: string;
-	};
+        type Post = {
+                title: string;
+                date: string;
+                summary: string;
+                slug: string;
+        };
 
-	let { data } = $props();
-	const posts: Post[] = data.posts;
+        type SpotifyStatus = {
+                status: string;
+                nowPlaying: { title: string; artist: string } | null;
+                recentTrack: { title: string; artist: string } | null;
+        };
+
+        let { data } = $props();
+        const posts: Post[] = data.posts;
+        const spotify: SpotifyStatus | null = data.spotify ?? null;
 
 	type EyeConfig = {
 		id: number;
@@ -58,11 +65,11 @@
 </script>
 
 <div class="page">
-	<header class="hero">
-		<div class="eyes-row">
-			{#each eyes as eye (eye.id)}
-				<Eye
-					eyeSrc={eye.eyeSrc}
+        <header class="hero">
+                <div class="eyes-row">
+                        {#each eyes as eye (eye.id)}
+                                <Eye
+                                        eyeSrc={eye.eyeSrc}
 					pupilColor={eye.color}
 					width={200}
 					height={120}
@@ -70,11 +77,45 @@
 					baseOffsetX={eye.offsetX}
 					baseOffsetY={eye.offsetY}
 					pupilShape={eye.shape}
-					className={`eye-${eye.id}`}
-				/>
-			{/each}
-		</div>
-	</header>
+                                        className={`eye-${eye.id}`}
+                                />
+                        {/each}
+                </div>
+
+                <div class="spotify-status">
+                        <div class="spotify-label">Spotify</div>
+                        {#if spotify}
+                                <div class="spotify-body">
+                                        <div class="status-line">
+                                                <span class="status-dot"></span>
+                                                <span class="status-text">{spotify.status}</span>
+                                        </div>
+
+                                        {#if spotify.nowPlaying}
+                                                <div class="track-line">
+                                                        <span class="track-label">Now playing</span>
+                                                        <span class="track-title">{spotify.nowPlaying.title}</span>
+                                                        <span class="track-artist">by {spotify.nowPlaying.artist}</span>
+                                                </div>
+                                        {:else}
+                                                <div class="track-line idle">Nothing playing right now.</div>
+                                        {/if}
+
+                                        {#if spotify.recentTrack}
+                                                <div class="track-line recent">
+                                                        <span class="track-label">Recent</span>
+                                                        <span class="track-title">{spotify.recentTrack.title}</span>
+                                                        <span class="track-artist">by {spotify.recentTrack.artist}</span>
+                                                </div>
+                                        {/if}
+                                </div>
+                        {:else}
+                                <div class="spotify-body">
+                                        <div class="track-line idle">Spotify status unavailable.</div>
+                                </div>
+                        {/if}
+                </div>
+        </header>
 
 	<section class="section">
 		<div class="section-header">
